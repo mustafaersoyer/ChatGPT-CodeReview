@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node -r dotenv/config ./dist/index.js",
     "test": "jest",
-    "build": "rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript && ncc build src/github-action.cjs -o action",
+    "build": "rm -rf dist && rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript && ncc build src/github-action.cjs -o action",
     "build:lambda": "ncc build src/aws-lambda.cjs -o lambda"
   },
   "dependencies": {
